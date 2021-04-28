@@ -1,5 +1,15 @@
 # IPGeo
 
+## Web App
+
+A very simple web app to display the coordinates of a given (or randomly generated) IP address.
+
+Services used:
+ - [Leaflet](https://leafletjs.com/)
+ - [freegeoip.app](https://freegeoip.app/)
+
+ ## Notebook
+
 Simple experimentation tools written in Python (in a Jupyter Notebook) using free APIs and packages, including:
 
 🌎 IP Geolocation Visualizer (for randomly generated IPs)

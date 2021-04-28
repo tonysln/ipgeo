@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Anton Slavin" /> 
+
+    <title>IP Geo Visualizer</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+    <style>
+        body {
+            font-family: helvetica, arial, sans-serif;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        small a, small a:visited {
+            text-emphasis: none;
+            text-decoration: none;
+            color: #36b;
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-image: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
+            padding-right: 15px;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        hr { opacity: 0.4; margin-bottom: 1.2em; }
+        h1 { margin: 0; padding: 0; }
+
+        header, main {
+            padding: 0 0.6em;
+            max-width: 790px;
+            margin: 1em auto;
+        }
+
+        #latlong { font-family: monospace; font-size: 120%; }
+        #map { margin: 1em 0 2em 0; height: 58vh; }
+        #maps_link { margin-bottom: 2em; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>IP Geo Visualizer</h1>
+        <hr>
+    </header>
+
+    <main>
+        <div>
+            <p>
+                Insert an IP or generate a random one. Limited to 15k queries per hour.
+            </p>
+            <input type="text" id="ip_box">
+            <button type="submit" onclick="findLocation()">
+                Search
+            </button>
+            <button type="submit" onclick="randomIP()">
+                Random
+            </button>
+            <p id="latlong"><wbr></p>
+        </div>
+        <div id="map"></div>
+        <small>
+            <a id='maps_link' target="_blank">
+                Open in Google Maps
+            </a>
+
+            <span style="float: right;">Created by <a href="https://github.com/tonysln">Anton</a></span>
+        </small>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
