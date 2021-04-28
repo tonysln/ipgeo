@@ -2,7 +2,7 @@
 
 ## Web App
 
-A very simple web app to display the coordinates of a given (or randomly generated) IP address.
+A simple web app to display the coordinates of a given (or randomly generated) IP address.
 
 Services used:
  - [Leaflet](https://leafletjs.com/)
