@@ -1,6 +1,8 @@
 // DOM objects
 const ip_box = document.getElementById("ip_box");
 const latlong = document.getElementById("latlong");
+const search = document.getElementById("search");
+const random = document.getElementById("random");
 const maps_link = document.getElementById('maps_link');
 
 maps_link.style.visibility = 'hidden';
@@ -17,13 +19,14 @@ tiles.addTo(lmap);
 lmap.attributionControl.addAttribution(attr);
 lmap.setView([0, 0], 1);
 
+// React to button clicks
+search.addEventListener('click', findLocation);
+random.addEventListener('click', randomIP);
+
+
 function randomIP() {
-    let nums = [0, 0, 0, 0];
-
-    for (let i = 0; i < nums.length; i++) {
-        nums[i] = Math.floor(Math.random() * 256);
-    }
-
+    // Generate 4 random values in range [0..255]
+    const nums = [0, 0, 0, 0].map(() => Math.floor(Math.random() * 256));
     ip_box.value = nums.join(".");
     findLocation();
 }
